@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<header class="Newjumbotron">
+		<div class="container">
+			<h1>Latest Gadgets</h1>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;"The Best Gadget is the Human Brain"</p>
+			<p>
+				<a id="btn1" class="btn btn-primary btn-lg" href="/gadgets/new">Add New Gadget Info</a>
+			</p>
+		</div>
+	</header>
+	
+	<div class="row text-center">
+		<% gadgets.forEach(function(gadget) { %>
+			<div class="col-md-4 col-sm-6 col-lg-3">
+				<div class="thumbnail">
+					<a href="/gadgets/<%= gadget._id %>" class="d-block mb-3 h-100">
+						<img class="img-fluid img-thumbnail" src="<%= gadget.image %>">
+					</a>
+				</div>
+				<div class="caption mb-3">
+					<%= gadget.name %>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
